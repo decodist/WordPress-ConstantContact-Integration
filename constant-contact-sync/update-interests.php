@@ -79,10 +79,7 @@ if ( isset($_POST['submit']) && isset($_POST['interests']) ) {
 	}
 	
 	//check for illegal email list names
-	$allowed_responses = array(	"LIST 1",
-								"LIST 2",
-								"LIST 3",
-								"LIST 4");
+	$allowed_responses = array(	"LIST 1", "LIST 2", "LIST 3", "LIST 4");
 	
 	$posted_responses = explode('|',$_POST['interests']);
 	$posted_responses = array_filter($posted_responses); //trim any empties
@@ -102,9 +99,7 @@ if ( isset($_POST['submit']) && isset($_POST['interests']) ) {
 		
 		//provide user feedback
 		if ($result === 'success') {
-			echo "	<div>
-						Done! Your preferences have been updated.<br/><br/><a href='https://redacted.com'>Continue to redacted.com</a>
-					</div>";
+			echo "Done! Your preferences have been updated.<br/><br/><a href='https://redacted.com'>Continue to redacted.com</a>";
 			die();
 		} else {
 			//send alert
