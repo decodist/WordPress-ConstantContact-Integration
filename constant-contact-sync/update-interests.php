@@ -66,9 +66,8 @@ echo "
         <meta name='robots' content='noindex'>
     </head>
   	<body>
-			<a href='https://redacted.com'><img src='https://redacted.com/wp-content/uploads/xxx/xxx.png' alt='redacted'></a>
-			
-			<b>Stay informed about redacted</b>
+		<a href='https://redacted.com'><img src='https://redacted.com/wp-content/uploads/xxx/xxx.png' alt='redacted'></a>
+		<b>Stay informed about redacted</b>
 ";
 
 //process the form if it's in a submitted state
