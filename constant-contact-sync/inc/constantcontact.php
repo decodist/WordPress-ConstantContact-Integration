@@ -201,8 +201,9 @@ class ConstantContact {
 		$decodedResponse = json_decode($response, true);
 		
 		//return both list memberships and contact_id (list_memberships is an array)
-		$listsAndContactId = array(	"list_memberships" 	=> $decodedResponse['list_memberships'],
-									"contact_id" 		=> $contact_id
+		$listsAndContactId = array(
+			"list_memberships"	=> $decodedResponse['list_memberships'],
+			"contact_id"		=> $contact_id
 		);
 		return $listsAndContactId;
 	}
@@ -210,10 +211,10 @@ class ConstantContact {
 	function getInterestMapping() {
 		/* list names and ID's from Constant Contact */
 		$interest_mapping = array (
-			"LIST 1"						=>	"XXX-8cb0-11eb-XXX",
-			"LIST 2"						=>	"XXX-8cb0-11eb-XXX",
-			"LIST 3"						=>	"XXX-8cb0-11eb-XXX",
-			"LIST 4"						=>	"XXX-8cb0-11eb-XXX"
+			"LIST 1"	=>	"XXX-8cb0-11eb-XXX",
+			"LIST 2"	=>	"XXX-8cb0-11eb-XXX",
+			"LIST 3"	=>	"XXX-8cb0-11eb-XXX",
+			"LIST 4"	=>	"XXX-8cb0-11eb-XXX"
 		);
 		return $interest_mapping;
 	}
