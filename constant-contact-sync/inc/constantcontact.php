@@ -21,12 +21,10 @@ class ConstantContact {
 	}
 	
 	function getCreateUpdateEndpoint() {
-		//https://v3.developer.constantcontact.com/api_reference/index.html#!/Contacts/createOrUpdateContact
 		return 'https://api.cc.email/v3/contacts/sign_up_form';
 	}
 	
 	function getRemoveContactFromListEndpoint() {
-		//https://v3.developer.constantcontact.com/api_reference/index.html#!/Bulk_Activities/postListRemoveContact
 		return 'https://api.cc.email/v3/activities/remove_list_memberships';
 	}
 	
@@ -39,7 +37,6 @@ class ConstantContact {
 	}
 	
 	function getAuthorizationURL() {
-		//https://v3.developer.constantcontact.com/api_guide/server_flow.html
 		// Generate authorization URL
 		// 'state' variable is an arbitrary value which is returned by the response for security verification purposes... which we don't need to do.
 		$baseURL = "https://authz.constantcontact.com/oauth2/default/v1/authorize";
@@ -168,17 +165,15 @@ class ConstantContact {
 		$decodedResponse = json_decode($response, true);
 		
 		//return both auth and contact_id to save re-authentication trips
-		$authAndContactId = array(	"auth" 			=> $auth,
-									"contact_id" 	=> $decodedResponse['contacts'][0]['contact_id']
-		);
+		$authAndContactId = array("auth" => $auth, "contact_id" => $decodedResponse['contacts'][0]['contact_id']);
 		return $authAndContactId;
 	}
 	
 	function getContactSubscriptionsFromEmail($contactEmail) {
 		
 		$authAndContactId = $this->getAuthAndContactIdFromEmail($contactEmail);
-		$contact_id 	= $authAndContactId['contact_id'];
-		$auth 			= $authAndContactId['auth'];
+		$contact_id = $authAndContactId['contact_id'];
+		$auth = $authAndContactId['auth'];
 		
 		if ($contact_id === '') {
 			return false;
@@ -340,6 +335,7 @@ class ConstantContact {
 			$headers = array('Content-Type: text/html; charset=UTF-8');
 			$headers[] = 'From: REDACTED';
 			wp_mail( $to, $subject, $body, $headers );
+			
 		} else {
 			return "success";
 		}
