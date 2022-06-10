@@ -4,10 +4,8 @@
  *
  * Custom functions for interacting and syncing with Constant Contact lists.
  *
- * PHP version 7.4
- *
  * @author     Jason Shaw
- * @version    1.5
+ * @version    1.6
  */
 class ConstantContact {
 	
